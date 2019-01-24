@@ -1,6 +1,6 @@
 #FROM registry.access.redhat.com/rhel7-minimal
 FROM centos:latest
-MAINTAINER Wouter Van den Heede <wouter.van.den.heede@brusselsairport.aero>
+MAINTAINER Wouter Van den Heede <vandenheede.wouter96@gmail.com>
 
 RUN yum update -y && \
     yum install -y \
