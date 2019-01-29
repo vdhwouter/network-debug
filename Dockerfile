@@ -10,6 +10,7 @@ RUN yum update -y && \
         git \
         vim \
         tcpdump \
+        net-tools \
         bind-utils && \
     chmod 4755 /bin/ping && \
     useradd me
