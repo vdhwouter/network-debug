@@ -13,13 +13,13 @@ RUN yum update -y && \
         net-tools \
         iproute \
         bind-utils && \
-    chmod 4755 /bin/ping && \
-    chown 1001:0 /bin/ping
+    chmod u+s /bin/ping
 
 WORKDIR /opt/app-root/src
 
 ADD docker-entrypoint.sh bin/
 
 USER 1001
+
 
 CMD /opt/app-root/src/bin/docker-entrypoint.sh
