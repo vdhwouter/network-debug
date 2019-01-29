@@ -15,14 +15,10 @@ RUN yum update -y && \
         traceroute \
         vim \
         wget
-#    chmod u+s /bin/ping
 
 WORKDIR /opt/app-root/src
 
 ADD docker-entrypoint.sh bin/
-
-RUN setcap 'cap_net_admin,cap_net_raw+ep' /usr/bin/ping
-#RUN setcap cap_net_raw,cap_net_admin+p /usr/bin/ping
 
 USER 1001
 
