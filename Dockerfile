@@ -14,7 +14,7 @@ RUN yum update -y && \
         iproute \
         bind-utils && \
     chmod 4755 /bin/ping && \
-    useradd me
+    chown 1001:0 /bin/ping
 
 WORKDIR /opt/app-root/src
 
