@@ -9,7 +9,9 @@ RUN yum update -y && \
         curl \
         git \
         vim \
-        tcpdump
+        tcpdump \
+        bind-utils && \
+    chmod 4755 /bin/ping
 
 WORKDIR /opt/app-root/src
 
