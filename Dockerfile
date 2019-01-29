@@ -21,7 +21,8 @@ WORKDIR /opt/app-root/src
 
 ADD docker-entrypoint.sh bin/
 
-RUN setcap cap_net_raw,cap_net_admin+p /usr/bin/ping
+RUN chcon 4755 /usr/bin/ping
+#RUN setcap cap_net_raw,cap_net_admin+p /usr/bin/ping
 
 USER 1001
 
