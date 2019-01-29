@@ -11,6 +11,7 @@ RUN yum update -y && \
         vim \
         tcpdump \
         net-tools \
+        iproute \
         bind-utils && \
     chmod 4755 /bin/ping && \
     useradd me
