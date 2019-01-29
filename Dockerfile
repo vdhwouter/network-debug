@@ -11,7 +11,8 @@ RUN yum update -y && \
         vim \
         tcpdump \
         bind-utils && \
-    chmod 4755 /bin/ping
+    chmod 4755 /bin/ping && \
+    useradd me
 
 WORKDIR /opt/app-root/src
 
