@@ -14,7 +14,8 @@ RUN yum update -y && \
         telnet \
         traceroute \
         vim \
-        wget
+        wget \
+        mariadb
 
 WORKDIR /opt/app-root/src
 
