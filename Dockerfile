@@ -8,14 +8,14 @@ RUN yum update -y && \
         git \
         iproute \
         net-tools \
+        mariadb \
         nmap \
         nmap-ncat \
         tcpdump \
         telnet \
         traceroute \
         vim \
-        wget \
-        mariadb
+        wget
 
 WORKDIR /opt/app-root/src
 
