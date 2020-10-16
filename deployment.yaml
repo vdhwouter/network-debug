@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: network-debug
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: network-debug
+  template:
+    metadata:
+      labels:
+        app: network-debug
+    spec:
+      containers:
+      - name: network-debug
+        image: vdhwouter/network-debug:latest
+        imagePullPolicy: Always
+      dnsPolicy: ClusterFirst
+#    triggers:
+#      - type: "ConfigChange"
+#      - type: "ImageChange"
+#        imageChangeParams:
+#          automatic: true
+#          from:
+#            kind: "ImageStreamTag"
+#            name: "network-debug:latest"
+#          containerNames:
+#            - "network-debug"
