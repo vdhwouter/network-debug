@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: network-debug
+spec:
+  selector:
+      matchLabels:
+        name: network-debug
+  template:
+    metadata:
+      labels:
+        name: network-debug
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+      tolerations:
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/master
+        operator: Exists
+      containers:
+      - image: vdhwouter/network-debug:latest
+        imagePullPolicy: Always
+        name: network-debug
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+      serviceAccount: default
+      terminationGracePeriodSeconds: 10
