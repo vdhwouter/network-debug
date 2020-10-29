@@ -1,12 +1,12 @@
-FROM centos:latest
+FROM centos:8
 MAINTAINER Wouter Van den Heede <vandenheede.wouter96@gmail.com>
 
-RUN yum update -y && \
-    yum install -y \
+RUN dnf update -y && \
+    dnf install -y \
         bind-utils \
         curl \
         git \
-        iperf \
+        iperf3 \
         iproute \
         net-tools \
         mariadb \
@@ -16,7 +16,8 @@ RUN yum update -y && \
         telnet \
         traceroute \
         vim \
-        wget
+        wget && \
+    rm -rf /var/cache/yum
 
 WORKDIR /opt/app-root/src
 
