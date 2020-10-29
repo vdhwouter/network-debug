@@ -6,6 +6,7 @@ RUN yum update -y && \
         bind-utils \
         curl \
         git \
+        iperf \
         iproute \
         net-tools \
         mariadb \
